@@ -1,7 +1,7 @@
 /* jshint ignore:start */
 
 //set the color of a html element based on the colors's analysis of an image
-function setElementColorsImages(url, element, color){
+function setElementColorsImages(url, elements, color, style){
   var img = document.createElement('img');
   img.setAttribute('src', url)
   img.addEventListener('load', function() {
@@ -15,11 +15,25 @@ function setElementColorsImages(url, element, color){
 
           }
       }
-      document.getElementById(element).style.color = objects[color];
+      for (index = 0; index < elements.length; ++index) {
+          // document.getElementById("test").style.color = objects[color];
+          var collect = document.getElementsByClassName(elements[index]);
+          console.log(collect);
+          changeColor(collect, objects[color], style);
+      }
+
       // console.log(objects);
       //  Results into: * Vibrant #7a4426  * Muted #7b9eae * DarkVibrant #348945 * DarkMuted #141414 * LightVibrant #f3ccb4
       //  document.getElementById('blockquote').style.color = '#7a4426';
   });
+}
+
+function changeColor(coll, color, style){
+
+    for(var i=0, len=coll.length; i<len; i++)
+    {
+        coll[i].style[style] = color;
+    }
 }
 
 //return an array of objects according to key, value, or key and value matching

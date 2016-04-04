@@ -1,0 +1,95 @@
+<!-- Post Content -->
+<article>
+    <div class="container">
+
+        <div class="row">
+          <div class="feed-filter-ctn">
+              I WANT TO
+
+              <select class="feed-filter-ctn" ng-model="typesList.selectedOption" ng-change="changedValue(typesList.selectedOption)"
+                ng-options="option.name for option in typesList.availableOptions track by option.id">
+              </select>
+              <!-- <div id="feed-dropdown" class="feed-filter-dropdown">_______v
+                <div id="feed-dropdown-menu" class="dropdown-content">
+                  <a href="#" ng-model="valueFilter" value="food">EAT</a>
+                  <a href="#" ng-model="valueFilter" value="bar">DRINK</a>
+                  <a href="#" ng-model="valueFilter" value="shop"></a>
+                  <a href="#" ng-model="valueFilter" value="coffee">HAVE A COFFEE</a>
+                </div>
+              </div> -->
+               IN MONTREAL.
+          </div>
+        </div>
+        <!-- feed cards section -->
+        <div class="row">
+
+          <!-- card -->
+            <div  ng-repeat="item in items" class="col-lg-4 col-md-6 col-xs-12">
+              <div class="poi-card">
+                <a href="http://memorable.io/post/detail/{{item.id}}">
+                  <div class="img-ctn" style="background-image: url('images/{{item.establishement_id}}.jpg')">
+                    <div class="img-ptrn-">
+                      <div class="img-h1">
+                        <!-- {{item.establishement_name}} -->
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <div class="post-header">
+              					<h2><a href="http://memorable.io/post/detail/{{item.id}}">{{item.establishement_name}}</a></h2>
+              		<span class="title-divider"></span>
+              	</div>
+                <div class="info-ctn">
+                  <div class="info-p">
+                    Price range : {{item.establishement_pricerange}}
+                  </div>
+                  <div class="info-p">
+                    Distance :
+
+                  </div>
+                </div>
+                  <!-- Address : <a class="primary-color" href="#">{{item.establishement_address}}</a> -->
+                <!-- <div class="cta-ctn">
+                  <a class="cta-ctn-a" href="#">DETAILS</a>
+                </div> -->
+              </div>
+            </div>
+
+      </div>
+
+      <div class="row">
+          <h2 class="section-title text-center"><a href="#" class="section-heading-2 ">MORE</a></h2>
+      </div>
+
+
+<hr>
+        <!--Establishement Section
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 class="section-title text-center"><span class="section-heading-2 "><a href="https://www.facebook.com/Caf%C3%A9-Plume-185887431462150/">CAFE PLUME</a></span></h2>
+                <ul class="est-list">
+                  <li class="est-location">Location: <span class="primary-color">Address</span></li>
+                  <li class="est-price">Price: <span class="primary-color">$</span></li>
+                  <li class="est-website">Website: <span class="primary-color">www.cafeplume.ca</span></li>
+                  <li class="est-schedule">Opening Hours: <span class="primary-color">Opening Hours</span> </li>
+                </ul>
+
+                  <p>Photographs by <a href="https://www.facebook.com/Caf%C3%A9-Plume-185887431462150/">Café Plume</a>.</p>
+            </div>
+        </div>
+<hr>-->
+        <!--Memorable Section -->
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 class="section-title text-center"><span class="section-heading-2 "><a href="https://www.facebook.com/Caf%C3%A9-Plume-185887431462150/">about Memorable</a></span></h2>
+                <p>Tap into the exclusive knowledge of the tastemakers that always have their fingers on the pulse of the city. Register for the beta on <a href="https://memorable.io">memorable.io.</a> </p>
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+</body>
+
+</html>

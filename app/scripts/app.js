@@ -12,19 +12,22 @@ angular
   .module('memorableAppApp', [
     'ngRoute'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/:param1', {
+      .when('/', {
+        templateUrl: 'views/list.html',
+        controller: 'ListCtrl',
+        controllerAs: 'list'
+      })
+      .when('/detail/:param1', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
       .otherwise({
         redirectTo: '/'
       });
+
+      // enable HTML5 mode as hashbang-type URLs will not work with mod_rewrite redirection
+        // $locationProvider.html5Mode(true).hashPrefix('!');
   });

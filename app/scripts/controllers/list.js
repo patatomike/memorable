@@ -12,8 +12,6 @@ angular.module('memorableAppApp')
 
     $(".filter").click(function() {
         $(".label").text($(this).text());
-        $(".label").css("color","#4d676d");
-        $(".label-btn").css("color","#4d676d");
         updateList($(this).text());
       });
 

@@ -1,8 +1,10 @@
 <!doctype html>
 <html>
   <head>
-    <!-- <base href="/post/"> -->
+    <!-- <base href="/"> -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Memorable: Montreal</title>
     <meta name="description" content="Memorable, your daily recommendation feed to discover the freshest restaurants,
     brunch, microbreweries, coffee roasters, bars and local boutiques in town.">
@@ -10,7 +12,7 @@
     coffee shop montreal, microbreweries montreal, shop montreal, boutique montreal, lifestlye influencer, best coffee montreal,  coffee roaster,
     barista montreal, in montreal, montreal city, montreal plateau, montreal old town, montreal village, discover montreal, rediscover city, raphael sculati, michael dayen, paul geoffrion,
     memorable experience, local search engine, local discovery startup, local discovery, startup montreal, montreal">
-
+    <meta property="og:image" content="http://memorable.io/images/montreal.jpg"  >
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -77,6 +79,9 @@
                       <li>
                           <a href="http://memorable.io">Home</a>
                       </li>
+                      <li>
+                          <a href="http://memorable.io/about" target="_blank">About us</a>
+                      </li>
                   </ul>
               </div>
           </div>
@@ -87,11 +92,7 @@
     <div ng-view=""></div>
 
 
-    <!-- <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Memorable team</p>
-      </div>
-    </div> -->
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -120,6 +121,12 @@
         </div>
     </footer>
 
+    <!-- <div class="footer">
+      <div class="container">
+        <p>Made with <i class="fa fa-heart"></i> by <a href="http://www.thecomputerfirm.com">The Computer Firm</a>.</p>
+      </div>
+    </div> -->
+
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -146,7 +153,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/memorable-pois.min.js"></script>
+        <script src="scripts/memorable-pois.js"></script>
         <script src="scripts/functions.js"></script>
         <script src="scripts/controllers/list.js"></script>
         <!-- endbuild -->

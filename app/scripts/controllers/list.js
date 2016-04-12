@@ -10,12 +10,50 @@
 angular.module('memorableAppApp')
   .controller('ListCtrl', function ($scope, $http) {
 
+    $(".filter").click(function() {
+        $(".label").text($(this).text());
+        $(".label").css("color","#4d676d");
+        $(".label-btn").css("color","#4d676d");
+        updateList($(this).text());
+      });
+
+
+    $(".modal-fullscreen").on('show.bs.modal', function () {
+      setTimeout( function() {
+        $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
+      }, 0);
+    });
+    $(".modal-fullscreen").on('hidden.bs.modal', function () {
+      $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
+    });
+
     $http.get('Row1data.json').success (function(data){
       // console.log(data);
 
-      $scope.items = getObjects(data ,'establishement_type','Food');
+      var obj = getObjects(data ,'establishement_type1','Eat');
 
-      // console.log(getObjects(data ,'establishement_type','Coffee')); //retrieve all POI by establishement_type
+      $scope.items = obj;
+      var lats = getValues(obj ,'establishement_lat');
+      var longs = getValues(obj ,'establishement_long');
+      $scope.lats = lats;
+      $scope.longs = longs;
+
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var lat1 = position.coords.latitude;
+        var lng1 = position.coords.longitude;
+        var distances = [];
+        // console.log(distance);
+        $scope.$apply(function(){
+          // $scope.distance = distance;
+          $scope.lat = lats;
+          $scope.lng = lng1;
+          for (var i = 0 ; i < longs.length; i++) {
+            distances[i]  = getDistanceBetween(lat1, lng1, $scope.lats[i], $scope.longs[i], 'K');
+          }
+          $scope.distances = distances;
+        });
+      });
+
     });
 
     $scope.typesList={
@@ -26,24 +64,53 @@ angular.module('memorableAppApp')
         {id: 1, name: "EAT"} //This sets the default value of the select in the ui
       };
 
-    $scope.changedValue=function(item){
+
+    function updateList(item) {
       $http.get('Row1data.json').success (function(data){
-        switch (item.id) {
-          case 1:
-            $scope.items = getObjects(data ,'establishement_type','Food');
+        var obj;
+        switch (item) {
+          case "EAT":
+            obj = getObjects(data ,'establishement_type1','Eat');
+            $scope.items = obj;
             break;
-          case 2:
-            $scope.items = getObjects(data ,'establishement_type','bar');
+          case "DRINK":
+            obj = getObjects(data ,'establishement_type1','Drink');
+            $scope.items = obj;
             break;
-          case 3:
-            $scope.items = getObjects(data ,'establishement_type','Shop');
+          case "SHOP":
+            obj = getObjects(data ,'establishement_type1','Shop');
+            $scope.items = obj;
             break;
-          case 4:
-            $scope.items = getObjects(data ,'establishement_type','Coffee');
+          case "HAVE A COFFEE":
+            obj = getObjects(data ,'establishement_type1','Coffee');
+            $scope.items = obj;
             break;
           default:
-            $scope.items = data;
+            obj = data;
+            $scope.items = obj;
         }
+
+        var lats = getValues(obj ,'establishement_lat');
+        var longs = getValues(obj ,'establishement_long');
+        $scope.lats = lats;
+        $scope.longs = longs;
+
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var lat1 = position.coords.latitude;
+          var lng1 = position.coords.longitude;
+          var distances = [];
+          // console.log(distance);
+          $scope.$apply(function(){
+            // $scope.distance = distance;
+            $scope.lat = lats;
+            $scope.lng = lng1;
+            for (var i = 0 ; i < longs.length; i++) {
+              distances[i]  = getDistanceBetween(lat1, lng1, $scope.lats[i], $scope.longs[i], 'K');
+            }
+            $scope.distances = distances;
+          });
+        });
+
       });
     }
 

@@ -1,33 +1,74 @@
+<script>
+(function(){
+var words = ["chefs" , "fashionistas" , "baristas" , "journalists" , "bloggers" , "creatives"], i = 0;
+setInterval(function(){
+  $('#influencer-list').fadeOut(function(){
+      $(this).html(words[i=(i+1)%words.length]).fadeIn();
+  });
+}, 3000);
+})();
+</script>
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url(images/montreal.jpg)">
+  <div class="intro-header-overlay">
+    <div class="container">
+        <div class="row title-center">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading text-center">
+                    <h1>Montreal through the eyes of </br><span id="influencer-list">chefs</span></h1>
+                    <!-- <h2 class="subheading"></h2> -->
+                  <!-- </br>
+
+                     <button class="btn btn-success subscribe">Explore now</button>
+                 -->
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</header>
+
 <!-- Post Content -->
 <article>
-    <div class="container">
 
-        <div class="row">
-          <div class="feed-filter-ctn">
-              I WANT TO
-
-              <select class="feed-filter-ctn" ng-model="typesList.selectedOption" ng-change="changedValue(typesList.selectedOption)"
-                ng-options="option.name for option in typesList.availableOptions track by option.id">
-              </select>
-              <!-- <div id="feed-dropdown" class="feed-filter-dropdown">_______v
-                <div id="feed-dropdown-menu" class="dropdown-content">
-                  <a href="#" ng-model="valueFilter" value="food">EAT</a>
-                  <a href="#" ng-model="valueFilter" value="bar">DRINK</a>
-                  <a href="#" ng-model="valueFilter" value="shop"></a>
-                  <a href="#" ng-model="valueFilter" value="coffee">HAVE A COFFEE</a>
-                </div>
-              </div> -->
-               IN MONTREAL.
+        <div class="container">
+        <!-- A implémenté 08/04/2016 -->
+          <div class="row">
+            <div class="feed-filter-ctn">
+                <p class="col-lg-4 col-xs-12 filter-before">I WANT TO</p>
+                  <div class="label-ctn col-lg-4 col-xs-12 text-center" data-toggle="modal" data-target="#modal-fullscreen" class="feed-filter-dropdown">
+                    <p class="label"> </p>
+                    <div class="btn-label"><i class="fa fa-angle-down"></i></div>
+                  </div>
+                 <p class="col-lg-4 col-xs-12 filter-after">IN MONTREAL.</p>
+            </div>
           </div>
-        </div>
+​
+          <!-- Modal fullscreen -->
+          <div class="modal modal-fullscreen fade" id="modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <ul id="feed-dropdown-menu" class="dropdown-content">
+                    <li><a class="filter" data-dismiss="modal" href="#" >EAT</a></li>
+                    <li><a class="filter" data-dismiss="modal" href="#">DRINK</a></li>
+                    <li><a class="filter" data-dismiss="modal" href="#">SHOP</a></li>
+                    <li><a class="filter" data-dismiss="modal" href="#">HAVE A COFFEE</a></li>
+                  </ul>
+                </div>
+                </div>
+              </div>
+            </div>
+    <!-- Fin implémentation -->
+
         <!-- feed cards section -->
         <div class="row">
-
           <!-- card -->
-            <div  ng-repeat="item in items" class="col-lg-4 col-md-6 col-xs-12">
+            <div ng-repeat="item in items" class="col-lg-4 col-md-6 col-xs-12">
               <div class="poi-card">
-                <a href="http://memorable.io/post/detail/{{item.id}}">
-                  <div class="img-ctn" style="background-image: url('images/{{item.establishement_id}}.jpg')">
+                <a href="http://memorable.io/detail/{{item.establishement_id}}#TOP">
+                  <div class="img-ctn" style="background-image: url('images/{{item.establishement_name_id}}.jpg')">
                     <div class="img-ptrn-">
                       <div class="img-h1">
                         <!-- {{item.establishement_name}} -->
@@ -36,7 +77,7 @@
                   </div>
                 </a>
                 <div class="post-header">
-              					<h2><a href="http://memorable.io/post/detail/{{item.id}}">{{item.establishement_name}}</a></h2>
+              					<h2><a href="http://memorable.io/detail/{{item.establishement_id}}#TOP">{{item.establishement_name}}</a></h2>
               		<span class="title-divider"></span>
               	</div>
                 <div class="info-ctn">
@@ -44,7 +85,7 @@
                     Price range : {{item.establishement_pricerange}}
                   </div>
                   <div class="info-p">
-                    Distance :
+                    Distance : {{distances[$index]}} km
 
                   </div>
                 </div>
@@ -56,10 +97,11 @@
             </div>
 
       </div>
-
-      <div class="row">
+      <!-- <div class="row">
           <h2 class="section-title text-center"><a href="#" class="section-heading-2 ">MORE</a></h2>
-      </div>
+      </div> -->
+
+
 
 
 <hr>
@@ -81,15 +123,14 @@
         <!--Memorable Section -->
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 class="section-title text-center"><span class="section-heading-2 "><a href="https://www.facebook.com/Caf%C3%A9-Plume-185887431462150/">about Memorable</a></span></h2>
-                <p>Tap into the exclusive knowledge of the tastemakers that always have their fingers on the pulse of the city. Register for the beta on <a href="https://memorable.io">memorable.io.</a> </p>
+                <h2 class="section-title text-center"><span class="section-heading-2 ">about Memorable</span></h2>
+                <p>Tap into the exclusive knowledge of the tastemakers that always have their fingers on the pulse of the city. Register for the beta on <a href="http://memorable.io/about" target="_blank">memorable.io.</a> </p>
+
             </div>
         </div>
     </div>
+
+
 </article>
 
 <hr>
-
-</body>
-
-</html>

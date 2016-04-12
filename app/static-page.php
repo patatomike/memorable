@@ -1,17 +1,17 @@
 <?php
 
-    $SITE_ROOT = "http://memorable.io/post/";
+    $SITE_ROOT = "http://memorable.io/";
     // $id = $_GET['id'];
     $id = ctype_digit($_GET['id']) ? $_GET['id'] : 1;
     $data = file_get_contents ($SITE_ROOT . 'Row1data.json');
     $json = json_decode($data, true);
-
+    
     makePage($json, $id, $SITE_ROOT);
     // echo $json[$id][establishement_name];
 
     function makePage($json, $id, $siteRoot) {
 
-      $imageUrl = $siteRoot . "images/" . $json[$id][establishement_id] . ".jpg" ;
+      $imageUrl = $siteRoot . "images/" . $json[$id][establishement_name_id] . ".jpg" ;
       $pageUrl = $siteRoot . "detail/" . $id;
 
         ?>

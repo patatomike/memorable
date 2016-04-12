@@ -10,7 +10,7 @@
     <!-- Custom CSS -->
     <!-- <link href="css/clean-blog.css" rel="stylesheet"> -->
 
-    
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -21,7 +21,7 @@
 </head>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top" id="TOP">
       <div class="container-fluid">
           <div class="navbar-header page-scroll">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -37,6 +37,9 @@
                   <li>
                       <a href="http://memorable.io">Home</a>
                   </li>
+                  <li>
+                      <a href="http://memorable.io/about" target="_blank">About us</a>
+                  </li>
               </ul>
           </div>
           <!-- /.navbar-collapse -->
@@ -48,7 +51,7 @@
   <header class="intro-header" style="background-image: url({{urlImage}})">
     <div class="intro-header-overlay">
       <div class="container">
-          <div class="row">
+          <div class="row title-center">
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                   <div class="post-heading text-center">
                       <h1>{{item.establishement_name}}</h1>
@@ -59,9 +62,48 @@
       </div>
     </div>
   </header>
+
+
   <!-- Post Content -->
   <article>
       <div class="container">
+
+        <!--Establishement Section-->
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 class="section-title text-center"><span class="section-heading-2 ">{{item.establishement_name}}</span></h2>
+                <ul class="est-list">
+                  <li class="est-price">Price: <span class="colored">{{item.establishement_pricerange}}</span></li>
+                  <!-- <li class="est-price">Freshness index: <span class="colored"></span></li> -->
+                  <li class="est-location">Location: <a href="{{item.establishement_gmap_url}}"><span class="colored">{{item.establishement_address}}</span></a></li>
+                  <li class="est-website">Website: <a href="{{item.establishement_website_url}}"><span class="colored">{{item.establishement_website_url}}</span></a></li>
+                  <!-- <li class="est-website">Website: <a href="{{item.establishement_website_url}}"><span class="colored">{{item.establishement_website_url}}</span></a></li> -->
+                  <!-- <li class="est-schedule">Opening Hours: <span class="colored">{{item.establishement_hours}}</span> </li> -->
+                </ul>
+
+                  <p>Photographs by <a class="colored" href="{{item.establishement_facebook_url}}">{{item.establishement_name}}</a></p>
+            </div>
+        </div>
+<hr>
+
+        <div class="row">
+          <h2 class="section-title text-center"><span class="section-heading-2 ">INSTAGRAM PICTURES</span></h2>
+          <div class="col-lg-4 col-md-6 col-xs-12 white">
+            <iframe class="poi-card-insta" ng-src="{{trustSrc(item.establishement_instagram1)}}" height="500px" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+          </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <iframe class="poi-card-insta" ng-src="{{trustSrc(item.establishement_instagram2)}}"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+          </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <iframe class="poi-card-insta" ng-src="{{trustSrc(item.establishement_instagram3)}}"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+          </div>
+        </div>
+
+<hr>
+
+<!-- <iframe src="http://instagram.com/p/_FBIUCi5Pk/embed" width="400" height="400" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+ -->
+
           <!-- Infuencers section -->
           <div class="row">
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -79,26 +121,17 @@
               </div>
           </div>
 <hr>
-          <!--Establishement Section-->
-          <div class="row">
-              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                  <h2 class="section-title text-center"><span class="section-heading-2 ">{{item.establishement_name}}</span></h2>
-                  <ul class="est-list">
-                    <li class="est-location">Location: <span class="colored">{{item.establishement_address}}</span></li>
-                    <li class="est-price">Price: <span class="colored">{{item.establishement_pricerange}}</span></li>
-                    <li class="est-website">Website: <span class="colored">{{item.establishement_website_url}}</span></li>
-                    <!-- <li class="est-schedule">Opening Hours: <span class="colored">{{item.establishement_hours}}</span> </li> -->
-                  </ul>
 
-                    <p>Photographs by <a class="colored" href="{{item.establishement_facebook_url}}">{{item.establishement_name}}</a></p>
-              </div>
-          </div>
-<hr>
+          <!-- <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+          </div> -->
+
           <!--Memorable Section -->
           <div class="row">
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                   <h2 class="section-title text-center"><span class="section-heading-2 ">about Memorable</span></h2>
-                  <p>Tap into the exclusive knowledge of the tastemakers that always have their fingers on the pulse of the city. Register for the beta on <a class="colored" href="https://memorable.io">memorable.io.</a> </p>
+                  <p>Tap into the exclusive knowledge of the tastemakers that always have their fingers on the pulse of the city. Register for the beta on <a class="colored" href="http://memorable.io/about" target="_blank">memorable.io.</a> </p>
               </div>
           </div>
       </div>

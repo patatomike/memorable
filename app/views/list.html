@@ -25,15 +25,15 @@ setInterval(function(){
                   <a href="#"><div class="btn-cta-header">EXPLORE THE CITY</div></a>
               </div>
             </div>
-      </div>
-    </header>
+    </div>
+</header>
 <!-- Post Content -->
 <article>
 
         <div class="container">
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 class="section-title text-center"><span class="section-heading-2 ">FRESHEST ESTABLISHEMENTS</span></h2>
+                <!--<h2 class="section-title text-center"><span class="section-heading-2 ">FRESHEST ESTABLISHEMENTS</span></h2>-->
                 <p class="subhead-p">Find out which boutique, coffee roaster, venue or restaurant is curently trendy in Montreal, based on the reviews of respected crtitics, bloggers, chefs or insiders in the Montreal scene. </p>
             </div>
         </div>
@@ -70,7 +70,7 @@ setInterval(function(){
         <!-- feed cards section -->
         <div class="row">
           <!-- card -->
-            <div ng-repeat="item in items" class="col-lg-4 col-md-6 col-xs-12">
+            <div ng-repeat="item in items" class="col-lg-4">
               <div class="poi-card">
                 <a href="http://memorable.io/detail/{{item.establishement_id}}#TOP">
                   <div class="img-ctn" style="background-image: url('images/{{item.establishement_name_id}}.jpg')">

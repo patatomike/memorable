@@ -10,9 +10,15 @@
 angular.module('memorableAppApp')
   .controller('ListCtrl', function ($scope, $http) {
 
+
+
     $(".filter").click(function() {
         $(".label").text($(this).text());
         updateList($(this).text());
+        $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).delay(1000).offset().top
+        }, 1000);
+
       });
 
 
@@ -111,5 +117,12 @@ angular.module('memorableAppApp')
 
       });
     }
+
+    $('#cta-hero').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 1000);
+    return false;
+});
 
   });

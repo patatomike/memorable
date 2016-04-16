@@ -11,6 +11,21 @@ setInterval(function(){
 
 <!-- Page Header -->
 <header class="intro-header" style="background-image: url('images/accueil-web-bg2.jpg')">
+  <div class="nav-menu">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 col-xs-6">
+          <a class="navbar-brand" href="/index.html">
+            <img class="logo-nav-brand"src="images/memorable-logo-white-cube.png" alt="">
+            <span class="text-nav-brand">memorable</span>
+          </a>
+        </div>
+        <div class="col-lg-6 col-xs-6 text-right menu-item">
+            <a href="http://memorable.io/about">about us</a>
+        </div>
+      </div>
+    </div>
+  </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -19,12 +34,10 @@ setInterval(function(){
                         <h2 class="subheading">Through the eyes of <span id="influencer-list">chefs</span></h2>
                     </div>
                 </div>
-            </div>
-            <div class="row">
               <div class="col-lg-4 col-lg-offset-4 col-xs-12">
-                  <a href="#"><div class="btn-cta-header">EXPLORE THE CITY</div></a>
+                  <a id="cta-hero" href="#recommendations-section"><div class="btn-cta-header">EXPLORE THE CITY</div></a>
               </div>
-            </div>
+          </div>
     </div>
 </header>
 <!-- Post Content -->
@@ -32,23 +45,23 @@ setInterval(function(){
 
         <div class="container">
           <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1">
                 <!--<h2 class="section-title text-center"><span class="section-heading-2 ">FRESHEST ESTABLISHEMENTS</span></h2>-->
-                <p class="subhead-p">Find out which boutique, coffee roaster, venue or restaurant is curently trendy in Montreal, based on the reviews of respected crtitics, bloggers, chefs or insiders in the Montreal scene. </p>
+                <p class="subhead-p">Discover which boutiques, coffee shops, bars, and restaurants are currently trendy in Montreal, based on opinions aggregated from all of the respected critics, bloggers, chefs, and insiders in the Montreal scene. </p>
             </div>
         </div>
         <hr>
-          <div class="row">
+          <div class="row" id="recommendations-section">
+            <h2 class="section-title text-center"><span class="section-heading-2 ">recommendations</span></h2>
             <div class="feed-filter-ctn">
-                <p class="col-lg-4 col-xs-12 filter-before">I WANT TO</p>
-                  <div class="label-ctn col-lg-4 col-xs-12 text-center" data-toggle="modal" data-target="#modal-fullscreen" class="feed-filter-dropdown">
-                    <p class="label">EAT </p>
+                <h4 class="col-lg-4 filter-before">I WANT TO</h4>
+                <div class="col-lg-4 label-ctn text-center" data-toggle="modal" data-target="#modal-fullscreen" class="feed-filter-dropdown">
+                    <h3 class="label">EAT </h3>
                     <div class="btn-label"><i class="fa fa-angle-down"></i></div>
                   </div>
-                 <p class="col-lg-4 col-xs-12 filter-after">IN MONTREAL.</p>
+                 <h4 class="col-lg-4 filter-after">IN MONTREAL.</h4>
             </div>
           </div>
-        <hr>
 ​
           <!-- Modal fullscreen -->
           <div class="modal modal-fullscreen fade" id="modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -56,10 +69,12 @@ setInterval(function(){
               <div class="modal-content">
                 <div class="modal-body">
                   <ul id="feed-dropdown-menu" class="dropdown-content">
-                    <li><a class="filter" data-dismiss="modal" href="#" >EAT</a></li>
-                    <li><a class="filter" data-dismiss="modal" href="#">DRINK</a></li>
-                    <li><a class="filter" data-dismiss="modal" href="#">SHOP</a></li>
-                    <li><a class="filter" data-dismiss="modal" href="#">HAVE A COFFEE</a></li>
+                    <li><h1>I WOULD LIKE TO<h1></li>
+                    <li></li>
+                    <li><a class="filter" data-dismiss="modal" href="#recommendation-feed" ><h3>EAT</h3></a></li>
+                    <li><a class="filter" data-dismiss="modal" href="#recommendation-feed"><h3>DRINK</h3></a></li>
+                    <li><a class="filter" data-dismiss="modal" href="#recommendation-feed"><h3>SHOP</h3></a></li>
+                    <li><a class="filter" data-dismiss="modal" href="#recommendation-feed"><h3>HAVE A COFFEE</h3></a></li>
                   </ul>
                 </div>
                 </div>
@@ -68,7 +83,7 @@ setInterval(function(){
     <!-- Fin implémentation -->
 
         <!-- feed cards section -->
-        <div class="row">
+        <div class="row" id="recommendation-feed">
           <!-- card -->
             <div ng-repeat="item in items" class="col-lg-4">
               <div class="poi-card">
@@ -82,7 +97,7 @@ setInterval(function(){
                   </div>
                 </a>
                 <div class="post-header">
-              					<h2><a href="http://memorable.io/detail/{{item.establishement_id}}#TOP">{{item.establishement_name}}</a></h2>
+              					<h4><a href="http://memorable.io/detail/{{item.establishement_id}}#TOP">{{item.establishement_name}}</a></h4>
               		<span class="title-divider"></span>
               	</div>
                 <div class="info-ctn">

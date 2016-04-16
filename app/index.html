@@ -20,7 +20,7 @@
     <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
@@ -29,8 +29,8 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <link href="styles/memorable-pois.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/modern-typo-md.css">
+    <link rel="stylesheet" href="styles/memorable-pois.css" >
     <!-- endbuild -->
   </head>
   <body ng-app="memorableAppApp">
@@ -40,16 +40,16 @@
 
     <!-- Add your site or application content here -->
       <!-- Navigation -->
-      <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <!--   <nav class="navbar navbar-static-top navbar-custom">
         <div class="container-fluid">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <div class="navbar-header "><!--page-scroll-->
+              <!--    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img class="logo-nav-brand"src="images/memorable-logo-white-cube.png" alt=""> memorable</a>
+                <a class="navbar-brand" href="index.html"><img class="logo-nav-brand"src="images/memorable-logo-white-cube.png" alt=""> <span class="text-nav-brand">memorable</span</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -57,14 +57,16 @@
                         <a href="http://memorable.io/about">about us</a>
                     </li>
                     <li>
-                        <a href="http://memorable.io/newsletter">news</a>
+                        <a href="http://memorable.io/newsletter">newsletter</a>
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+            <!-- /.navbar-collapse-->
+      <!--   </div>
+        <!-- /.container-->
+  <!--   </nav>-->
+
+
 
 
 
@@ -73,38 +75,25 @@
 
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="http://twitter.com/memorabletech">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/memorablemtl">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- <div class="footer">
-      <div class="container">
-        <p>Made with <i class="fa fa-heart"></i> by <a href="http://www.thecomputerfirm.com">The Computer Firm</a>.</p>
+  <footer>
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-4">
+              <p>Memorable Media Inc.</p>
+          </div>
+          <div class="col-lg-4">
+              <p><a href="https://www.facebook.com/memorablemtl">facebook</a></p>
+          </div>
+          <div class="col-lg-4">
+              <p><a href="https://twitter.com/MemorableTech">twitter</a></p>
+          </div>
       </div>
-    </div> -->
+      <div class="row text-center">
+        <img class="logo-nav-brand-footer"src="images/memorable-logo-white-cube.png" alt="">
+      </div>
+    </div>
+  </footer>
+
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -114,7 +103,7 @@
        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
        }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-XXXXX-X');
+       ga('create', 'UA-71342875-2');
        ga('send', 'pageview');
     </script>
 
@@ -132,7 +121,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/memorable-pois.js"></script>
+        <!--<script src="scripts/memorable-pois.js"></script>-->
         <script src="scripts/functions.js"></script>
         <script src="scripts/controllers/list.js"></script>
         <!-- endbuild -->

@@ -107,10 +107,18 @@ hr{
   float:left;
   position:relative;
   margin-right:20px;
+  height:35px;
+  width:35px;
 }
 @media (max-width:767px){
   .text-nav-brand{
     display:none;
+  }
+
+  .logo-nav-brand{
+    margin-left:-10px;
+    height:30px;
+    width:30px;
   }
 }
 
@@ -315,12 +323,17 @@ hr{
   color: white;
 }
 @media only screen and (min-width: 768px) {
-  .intro-header .site-heading,
   .intro-header .post-heading,
   .intro-header .page-heading {
     padding: 150px 0;
   }
+
+  .intro-header .site-heading
+  {
+    padding:10vh 0;
+  }
 }
+
 
 .intro-header .post-heading h1 {
   /*font-size: 35px;*/
@@ -343,21 +356,13 @@ hr{
   color:#fff;
 }
 
-@media only screen and (min-width: 768px) {
-/*  .intro-header .post-heading h1 {
-    font-size: 55px;
-  }*/
-  /*.intro-header .post-heading .subheading {
-    font-size: 30px;
-  }*/
-}
 
 .site-heading h1{
   color:#fff;
 /*  font-size:50px !important;*/
   position:relative;
   padding-top:15vh;
-  padding-bottom:20px;
+  padding-bottom:0.5vh;
   text-align:left;
   letter-spacing: 5px;
   border-bottom: 1px solid #fff;
@@ -366,15 +371,16 @@ hr{
 .site-heading h2{
 
   color:#fff;
-  padding-top:30px;
+  padding-top:0.5vh;
 /*  font-size:30px !important;*/
   text-align:left;
-  letter-spacing:1px;;
+  letter-spacing:1px;
+  font-weight: 300;
 }
 
 .btn-cta-header{
-  margin-top:130px;
-  padding:10px;
+  margin-top:15vh;
+  padding:1vh;
   position:relative;
   color:#fff;
   border:3px solid #fff;
@@ -640,7 +646,7 @@ hr{
   display:block;
   z-index:3;
   background-color: #0D0D0D;
-  width:380px;
+  width:100%;
 }
 
 .poi-card-insta{
@@ -793,5 +799,9 @@ hr{
 
     footer .logo-nav-brand-footer{
       position:relative;
-      padding-top:40px;
+      top:40px;
+      width:40px;
+      height:40px;
+      /*padding-top:40px;*/
+
     }

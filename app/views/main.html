@@ -70,19 +70,26 @@
 
   <div class="section dark-section">
     <div class="container">
-        <div class="row">
+        <div class="row insta-cards">
           <h2 class="section-title text-center"><span class="section-heading-2 section-heading-2-reverse">INSTAGRAM PICTURES</span></h2>
-          <div class="col-lg-4 col-md-6 col-xs-12 white insta-cards">
-            <iframe class="poi-card-insta" ng-src="{{trustSrc(item.establishement_instagram1)}}"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+          <div class="col-lg-4 col-md-6 col-xs-12 white ">
+            <div class="hide-before-insta"></div>
+            <iframe id="frm1" class="poi-card-insta" ng-src="{{trustSrc(item.establishement_instagram1)}}" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
           </div>
           <div class="col-lg-4 col-md-6 col-xs-12">
-            <iframe class="poi-card-insta" ng-src="{{trustSrc(item.establishement_instagram2)}}"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            <div class="hide-before-insta"></div>
+            <iframe id="frm2" class="poi-card-insta" ng-src="{{trustSrc(item.establishement_instagram2)}}"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
           </div>
           <div class="col-lg-4 col-md-6 col-xs-12">
-            <iframe class="poi-card-insta" ng-src="{{trustSrc(item.establishement_instagram3)}}"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            <div class="hide-before-insta"></div>
+            <iframe id="frm3" class="poi-card-insta" ng-src="{{trustSrc(item.establishement_instagram3)}}"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
           </div>
         </div>
-        <hr>
+
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="photo-credit">Follow them on instagram @<a class="colored" href="{{item.establishement_facebook_url}}">{{item.establishement_name}}</a></p>
+      </div>
+      
     </div>
   </div>
 

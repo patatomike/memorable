@@ -36,6 +36,10 @@ angular.module('memorableAppApp')
 
     });
 
+
+    //var iIsVrScrollBar =  frm.contentWindow.document.documentElement.scrollHeight>frm.contentWindow.document.documentElement.offsetHeight ? 1 : 0;
+    //var iIsHrScrollBar = frm.contentWindow.document.documentElement.scrollWidth>frm.contentWindow.document.documentElement.offsetWidth ? 1 : 0;
+
     // var img = document.createElement('img');
     // img.setAttribute('src', 'images/post-bg.jpg')
     //

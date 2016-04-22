@@ -12,7 +12,7 @@ p {
 }
 p a {
   text-decoration: none;
-  color:#ab6948;
+  color:#fff;
 }
 
 .primary-color{
@@ -688,7 +688,7 @@ hr{
   }
 
     .img-ptrn{
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.1);
       background-image: url("../images/pattern.png");
       background-repeat: repeat;
       height: 100%;

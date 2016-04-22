@@ -10,17 +10,13 @@
 angular.module('memorableAppApp')
   .controller('ListCtrl', function ($scope, $http) {
 
-
-
     $(".filter").click(function() {
         $(".label").text($(this).text());
         updateList($(this).text());
         $('html, body').animate({
             scrollTop: $( $.attr(this, 'href') ).delay(1000).offset().top
         }, 1000);
-
       });
-
 
     $(".modal-fullscreen").on('show.bs.modal', function () {
       setTimeout( function() {
@@ -36,11 +32,12 @@ angular.module('memorableAppApp')
 
       var obj = getObjects(data ,'establishement_type1','Eat');
 
-      $scope.items = obj;
+      // $scope.items = obj;
       var lats = getValues(obj ,'establishement_lat');
       var longs = getValues(obj ,'establishement_long');
       $scope.lats = lats;
       $scope.longs = longs;
+
 
       navigator.geolocation.getCurrentPosition(function(position) {
         var lat1 = position.coords.latitude;
@@ -53,8 +50,13 @@ angular.module('memorableAppApp')
           $scope.lng = lng1;
           for (var i = 0 ; i < longs.length; i++) {
             distances[i]  = getDistanceBetween(lat1, lng1, $scope.lats[i], $scope.longs[i], 'K');
+            obj[i].distance = distances[i];
           }
-          $scope.distances = distances;
+          obj.sort(function(a, b) {
+              return parseFloat(a.distance) - parseFloat(b.distance);
+          });
+          $scope.items = obj;
+          // $scope.distances = distances;
         });
       });
 
@@ -110,8 +112,12 @@ angular.module('memorableAppApp')
             $scope.lng = lng1;
             for (var i = 0 ; i < longs.length; i++) {
               distances[i]  = getDistanceBetween(lat1, lng1, $scope.lats[i], $scope.longs[i], 'K');
+              obj[i].distance = distances[i];
             }
-            $scope.distances = distances;
+            obj.sort(function(a, b) {
+                return parseFloat(a.distance) - parseFloat(b.distance);
+            });
+            $scope.items = obj;
           });
         });
 

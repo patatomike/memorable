@@ -10,17 +10,13 @@
 angular.module('memorableAppApp')
   .controller('ListCtrl', function ($scope, $http) {
 
-
-
     $(".filter").click(function() {
         $(".label").text($(this).text());
         updateList($(this).text());
         $('html, body').animate({
             scrollTop: $( $.attr(this, 'href') ).delay(1000).offset().top
         }, 1000);
-
       });
-
 
     $(".modal-fullscreen").on('show.bs.modal', function () {
       setTimeout( function() {
@@ -33,18 +29,22 @@ angular.module('memorableAppApp')
 
     $http.get('Row1data.json').success (function(data){
       // console.log(data);
+      var categorieFromTime = getCategorieFromTime();
+      var textCategorie = getCategorieText(categorieFromTime);
+      $(".label").text(textCategorie);
+      var obj = getObjects(data ,'establishement_type1', categorieFromTime);
 
-      var obj = getObjects(data ,'establishement_type1','Eat');
-
-      $scope.items = obj;
+      // $scope.items = obj;
       var lats = getValues(obj ,'establishement_lat');
       var longs = getValues(obj ,'establishement_long');
       $scope.lats = lats;
       $scope.longs = longs;
+      $scope.items = obj;
 
       navigator.geolocation.getCurrentPosition(function(position) {
         var lat1 = position.coords.latitude;
         var lng1 = position.coords.longitude;
+
         var distances = [];
         // console.log(distance);
         $scope.$apply(function(){
@@ -53,8 +53,13 @@ angular.module('memorableAppApp')
           $scope.lng = lng1;
           for (var i = 0 ; i < longs.length; i++) {
             distances[i]  = getDistanceBetween(lat1, lng1, $scope.lats[i], $scope.longs[i], 'K');
+            obj[i].distance = distances[i];
           }
-          $scope.distances = distances;
+          obj.sort(function(a, b) {
+              return parseFloat(a.distance) - parseFloat(b.distance);
+          });
+          $scope.items = obj;
+          // $scope.distances = distances;
         });
       });
 
@@ -68,6 +73,33 @@ angular.module('memorableAppApp')
         {id: 1, name: "EAT"} //This sets the default value of the select in the ui
       };
 
+    $scope.getHomeScreenImage = function () {
+      var categorieImage = getCategorieFromTime() +".jpg";
+      return categorieImage;
+    }
+
+    $scope.getDistance = function (distance, item){
+      if(isNaN(item.distance)){
+        console.log("test");
+        var centerlat = 45.501724;
+        var centerlong = -73.567285;
+        var distanceCenter = getDistanceBetween(centerlat, centerlong, item.establishement_lat, item.establishement_long, 'K');
+        if(distanceCenter < 1){
+          distanceCenter = distanceCenter * 1000;
+          return distanceCenter + " m from city center";
+        } else {
+          return distanceCenter + " km from city center";
+        }
+      }
+      if(distance < 1){
+        distance = distance * 1000;
+        return distance + " m";
+      } else {
+        return distance + " km";
+      }
+
+
+    };
 
     function updateList(item) {
       $http.get('Row1data.json').success (function(data){
@@ -110,8 +142,12 @@ angular.module('memorableAppApp')
             $scope.lng = lng1;
             for (var i = 0 ; i < longs.length; i++) {
               distances[i]  = getDistanceBetween(lat1, lng1, $scope.lats[i], $scope.longs[i], 'K');
+              obj[i].distance = distances[i];
             }
-            $scope.distances = distances;
+            obj.sort(function(a, b) {
+                return parseFloat(a.distance) - parseFloat(b.distance);
+            });
+            $scope.items = obj;
           });
         });
 

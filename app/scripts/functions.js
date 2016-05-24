@@ -1,5 +1,55 @@
 /* jshint ignore:start */
 
+//return corresponding categorie text
+function getCategorieText(categorie){
+  var text = "";
+  switch (categorie) {
+    case "Eat":
+      text = "EAT";
+      break;
+    case "Drink":
+      text = "DRINK";
+      break;
+    case "Shop":
+      text = "SHOP";
+      break;
+    case "Coffee":
+      text = "HAVE A COFFEE";
+      break;
+    default:
+      obj = data;
+      text = "EAT";
+  }
+  return text;
+}
+
+//return section depending on the hour
+function getCategorieFromTime() {
+  var d = new Date(); // for now
+  var hour = d.getHours();
+  if(hour >= 0 && hour <= 4 ){
+    return "Drink";
+  }
+  if(hour >= 5 && hour <= 10 ){
+    return "Coffee";
+  }
+  if(hour >= 11 && hour <= 13 ){
+    return "Eat";
+  }
+  if(hour >= 14 && hour <= 16 ){
+    return "Coffee";
+  }
+  if(hour >= 17 && hour <= 18 ){
+    return "Drink";
+  }
+  if(hour >= 19 && hour <= 20 ){
+    return "Eat";
+  }
+  if(hour >= 21 && hour <= 24 ){
+    return "Drink";
+  }
+}
+
 //return distance between two coordinates
 function getDistanceBetween(lat1, lon1, lat2, lon2, unit) {
 

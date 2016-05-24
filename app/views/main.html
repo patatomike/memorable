@@ -12,7 +12,7 @@
 
 </head>
   <!-- Page Header -->
-  <header class="intro-header" style="background-image: url({{urlImage}})">
+  <header class="intro-header" id="TOP" style="background-image: url({{urlImage}})">
     <div class="intro-header-overlay">
       <div class="nav-menu">
         <div class="container-fluid">
@@ -24,7 +24,7 @@
               </a>
             </div>
             <div class="col-lg-6 col-xs-6 text-right menu-item">
-                <a href="http://memorable.io/about">about us</a>
+                <!-- <a href="http://memorable.io/about">about us</a> -->
             </div>
           </div>
         </div>
@@ -60,6 +60,9 @@
                 <h4 class="text-center">Website</h4>
                 <span class="title-divider"></span>
                 <p class="text-center"><a href="{{item.establishement_website_url}}"><span class="colored">{{item.establishement_website_url}}</span></a></p>
+                <!-- <h4 class="text-center">Hours</h4>
+                <span class="title-divider"></span>
+                <p class="text-center"><span class="colored">{{item.establishement_hours}}</span></p> -->
 
                 <p class="photo-credit">Photographs by <a class="colored" href="{{item.establishement_facebook_url}}">{{item.establishement_name}}</a></p>
             </div>
@@ -72,7 +75,7 @@
     <div class="container">
         <div class="row insta-cards">
           <h2 class="section-title text-center"><span class="section-heading-2 section-heading-2-reverse">INSTAGRAM PICTURES</span></h2>
-          <div class="col-lg-4 col-md-6 col-xs-12 white ">
+          <div class="col-lg-4 col-md-6 col-xs-12 white">
             <div class="hide-before-insta"></div>
             <iframe id="frm1" class="poi-card-insta" ng-src="{{trustSrc(item.establishement_instagram1)}}" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
           </div>
@@ -87,7 +90,7 @@
         </div>
 
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="photo-credit">Follow them on instagram @<a class="colored" href="{{item.establishement_facebook_url}}">{{item.establishement_name}}</a></p>
+        <p class="photo-credit">Follow them @<a class="colored" href="{{item.establishement_facebook_url}}">{{item.establishement_name}}</a></p>
       </div>
 
     </div>
@@ -102,19 +105,21 @@
           <!-- Infuencers section -->
           <div class="row">
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 class="section-title text-center"><span class="section-heading-2 ">INFLUENCERS OPINIONS</span></h2>
+                <h2 class="section-title text-center"><span class="section-heading-2 ">INFLUENCER OPINIONS</span></h2>
                 <div class="influencer-block">
                   <p>{{item.influencer1_name}} wrote about {{item.establishement_name}} :</p>
                   <blockquote class="colored">{{item.influencer1_quote_text}}</blockquote>
-                  <p class="text-right">Click <a class="colored" href="{{item.influencer1_article_url}}" target="_blank">here</a> for  full article published by <a class="colored" href="{{item.influencer1_publisher_facebook_url}}" target="_blank">{{item.influencer1_publisher_name}}.</a></p>
+                  <p class="text-right">Click <a class="colored" href="{{item.influencer1_article_url}}" target="_blank">here</a> for  full article published by <a class="colored" href="{{item.influencer1_article_url}}" target="_blank">{{item.influencer1_publisher_name}}.</a></p>
                 </div>
                 <div class="influencer-block">
                   <p>{{item.influencer2_name}} wrote about {{item.establishement_name}} :</p>
                   <blockquote class="colored">{{item.influencer2_quote_text}}</blockquote>
-                  <p class="text-right">Click <a class="colored" href="{{item.influencer2_article_url}}" target="_blank">here</a> for the full article published by <a class="colored" href="{{item.influencer2_publisher_facebook_url}}" target="_blank">{{item.influencer2_publisher_name}}.</a></p>
+                  <p class="text-right">Click <a class="colored" href="{{item.influencer2_article_url}}" target="_blank">here</a> for the full article published by <a class="colored" href="{{item.influencer2_article_url}}" target="_blank">{{item.influencer2_publisher_name}}.</a></p>
                 </div>
               </div>
           </div>
       </div>
     </div>
+
+
   </article>

@@ -782,6 +782,74 @@ hr{
     }
     /*modif 4th april 2016 end - ras*/
 
+    /******Blog posts**********/
+
+    .blog-article{
+      margin-top:-50px;
+      padding-top:60px;
+      background-color: #fff;
+    }
+
+    .blog-article a{
+      color:black;
+    }
+
+    .blog-article .influencer-link{
+      color:red;
+    }
+
+    .blog-article blockquote{
+      font-family: 'Lato', sans-serif;
+      color:#222;
+      text-align: left;
+    }
+
+    .blog-article .article-intro{
+      line-height: 150%;
+    }
+
+    .blog-article hr{
+      border-color:#eee;
+    }
+    .blog-cta-title{
+      margin-top:30px;
+      margin-bottom:80px;
+    }
+
+    .blog-cta-btn{
+      position:relative;
+      font-weight:700;
+      font-size:14px;
+      letter-spacing: 3px;
+      background-color:transparent;
+      border: 2px solid #0D0D0D;
+      color:#0D0D0D;
+      padding:10px 15px;
+      text-transform: uppercase;
+    }
+
+    .btn-detail{
+      border-color:#FF7676;
+      color:#FF7676;
+    }
+
+    .btn-direction{
+      border-color:#5DAE8B;
+      color:#5DAE8B;
+    }
+
+    .intro-cocktail{
+      background-image: url('cocktailGIF.gif');
+    }
+
+    #share-buttons img {
+    width: 50px;
+    padding: 5px;
+    border: 0;
+    box-shadow: 0;
+    display: inline;
+}
+
 
     /***FOOTER*****/
 

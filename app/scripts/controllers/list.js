@@ -10,13 +10,68 @@
 angular.module('memorableAppApp')
   .controller('ListCtrl', function ($scope, $http) {
 
-    $(".filter").click(function() {
-        $(".label").text($(this).text());
+
+    $(window).scroll(function() {
+   var hT = $('#recommendations-section').offset().top,
+       hH = $('#recommendations-section').outerHeight(),
+       wH = $(window).height(),
+       wS = $(this).scrollTop();
+   if (wS > (hT+hH)){
+       $(".filter-navbar").addClass("visible-filter");
+
+       $(".fa-filter").addClass("visible-filter");
+       $(".fa-filter").removeClass("invisible-filter");
+
+       $(".icon-bar").addClass("invisible-filter");
+       $(".icon-bar").removeClass("visible-filter");
+   }else{
+     $(".filter-navbar").removeClass("visible-filter");
+
+     $(".icon-bar").addClass("visible-filter");
+     $(".icon-bar").removeClass("invisible-filter");
+
+     $(".fa-filter").removeClass("visible-filter");
+     $(".fa-filter").addClass("invisible-filter");
+   }
+});
+    //$(".filter").click().addClass("selected");
+    $('.filter').click(function(){
+      if($(this).hasClass("selected")){
+        ($(this).removeClass("selected"));
+      }else{
+        $(this).addClass("selected");
+
+      }
+
+        /*$(".label").text($(this).text());
         updateList($(this).text());
         $('html, body').animate({
             scrollTop: $( $.attr(this, 'href') ).delay(1000).offset().top
-        }, 1000);
+        }, 1000);*/
       });
+
+  /*  $(".filter-validation-btn").click(function()) {
+      /*var search-query;
+      $(".selected").each(function (index, value) {
+        search-query+=value+";";
+      }
+      alert(search-query);*/
+    /*}*/
+
+    $("#filter-category-validation-btn").click(function() {
+    $.searchquery = "";
+    $(".selected").each(function() {
+      console.log($(this));
+    //  console.log(index + " : " + value);
+      //console.log(value[index].attr("id"));
+      $.searchquery+=$(this).attr("id")+";";
+    });
+    console.log($.searchquery);
+    /*updateList($(this).text());*/
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).delay(1000).offset().top
+    }, 1000);
+    });
 
     $(".modal-fullscreen").on('show.bs.modal', function () {
       setTimeout( function() {

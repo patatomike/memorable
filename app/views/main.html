@@ -12,7 +12,7 @@
 
 </head>
   <!-- Page Header -->
-  <header class="intro-header" id="TOP" style="background-image: url({{urlImage}})">
+  <header class="intro-header intro-header-detail" id="TOP" style="background-image: url({{urlImage}})">
     <div class="intro-header-overlay">
       <div class="nav-menu">
         <div class="container-fluid">
@@ -44,59 +44,86 @@
 
   <!-- Post Content -->
   <article>
+
     <div class="section">
       <div class="container">
-        <!--Establishement Section-->
+
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 class="section-title text-center"><span class="section-heading-2 ">{{item.establishement_name}}</span></h2>
+              <h2 class="section-title text-center"><span class="section-heading-2 ">PICTURES</span></h2>
+            </div>
+          </div>
 
-                <h4 class="text-center">Price</h4>
+          <div class="row insta-cards">
+            <div class="col-lg-4 col-md-6 col-xs-12 white">
+              <div class="hide-before-insta"></div>
+              <iframe id="frm1" class="poi-card-insta" ng-src="{{trustSrc(item.establishement_instagram1)}}" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12">
+              <div class="hide-before-insta"></div>
+              <iframe id="frm2" class="poi-card-insta" ng-src="{{trustSrc(item.establishement_instagram2)}}"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12">
+              <div class="hide-before-insta"></div>
+              <iframe id="frm3" class="poi-card-insta" ng-src="{{trustSrc(item.establishement_instagram3)}}"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            </div>
+          </div>
+
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <p class="photo-credit">Follow them @<a class="colored" href="{{item.establishement_facebook_url}}">{{item.establishement_name}}</a></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section  dark-section">
+      <div class="container">
+        <!--Establishement Section-->
+
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 class="section-title text-center"><span class="section-heading-2 section-heading-2-reverse ">{{item.establishement_name}}</span></h2>
+            </div>
+          </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-5">
+              <h4 class="text-center">Price</h4>
                 <span class="title-divider"></span>
                 <p class="text-center"><span class="colored">{{item.establishement_pricerange}}</span></p>
+            </div>
+            <div class="col-lg-4 col-md-5">
                 <h4 class="text-center">Location</h4>
                 <span class="title-divider"></span>
                 <p class="text-center"><a href="{{item.establishement_gmap_url}}"><span class="colored">{{item.establishement_address}}</span></a></p>
+            </div>
+
+            <div class="col-lg-4 col-md-5">
                 <h4 class="text-center">Website</h4>
                 <span class="title-divider"></span>
                 <p class="text-center"><a href="{{item.establishement_website_url}}"><span class="colored">{{item.establishement_website_url}}</span></a></p>
-                <!-- <h4 class="text-center">Hours</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-5">
+                <h4 class="text-center">Opening Hours</h4>
                 <span class="title-divider"></span>
-                <p class="text-center"><span class="colored">{{item.establishement_hours}}</span></p> -->
-
-                <p class="photo-credit">Photographs by <a class="colored" href="{{item.establishement_facebook_url}}">{{item.establishement_name}}</a></p>
+                <p class="text-center"><span class="colored">test</span></p>
+            </div>
+            <div class="col-lg-4 col-md-5">
+                <h4 class="text-center">Menu</h4>
+                <span class="title-divider"></span>
+                <p class="text-center"><span class="colored">Menu</span></p>
             </div>
         </div>
+        <!--<div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p class="photo-credit">Photographs by <a class="colored" href="{{item.establishement_facebook_url}}">{{item.establishement_name}}</a></p>
+            </div>
+          </div>-->
       </div>
     </div>
 <hr>
-
-  <div class="section dark-section">
-    <div class="container">
-        <div class="row insta-cards">
-          <h2 class="section-title text-center"><span class="section-heading-2 section-heading-2-reverse">INSTAGRAM PICTURES</span></h2>
-          <div class="col-lg-4 col-md-6 col-xs-12 white">
-            <div class="hide-before-insta"></div>
-            <iframe id="frm1" class="poi-card-insta" ng-src="{{trustSrc(item.establishement_instagram1)}}" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-          </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="hide-before-insta"></div>
-            <iframe id="frm2" class="poi-card-insta" ng-src="{{trustSrc(item.establishement_instagram2)}}"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-          </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="hide-before-insta"></div>
-            <iframe id="frm3" class="poi-card-insta" ng-src="{{trustSrc(item.establishement_instagram3)}}"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-          </div>
-        </div>
-
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="photo-credit">Follow them @<a class="colored" href="{{item.establishement_facebook_url}}">{{item.establishement_name}}</a></p>
-      </div>
-
-    </div>
-  </div>
-
-
 
 <!-- <iframe src="http://instagram.com/p/_FBIUCi5Pk/embed" width="400" height="400" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
  -->
@@ -106,19 +133,139 @@
           <div class="row">
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <h2 class="section-title text-center"><span class="section-heading-2 ">INFLUENCER OPINIONS</span></h2>
+              </div>
+            </div>
+          <div class="row">
+              <div class="col-lg-2 col-lg-offset-2 col-md-3 col-md-offset-1">
                 <div class="influencer-block">
-                  <p>{{item.influencer1_name}} wrote about {{item.establishement_name}} :</p>
-                  <blockquote class="colored">{{item.influencer1_quote_text}}</blockquote>
-                  <p class="text-right">Click <a class="colored" href="{{item.influencer1_article_url}}" target="_blank">here</a> for  full article published by <a class="colored" href="{{item.influencer1_article_url}}" target="_blank">{{item.influencer1_publisher_name}}.</a></p>
+                  <p><strong>{{item.influencer1_name}}</strong></p>
+                  <p class="text-left">Read the <a class="colored" href="{{item.influencer1_article_url}}" target="_blank">full article</a> published by <a class="colored" href="{{item.influencer1_article_url}}" target="_blank">{{item.influencer1_publisher_name}}.</a></p>
                 </div>
+              </div>
+              <div class="col-lg-6 col-md-7">
                 <div class="influencer-block">
-                  <p>{{item.influencer2_name}} wrote about {{item.establishement_name}} :</p>
+                  <blockquote class="colored">{{item.influencer1_quote_text}}</blockquote>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-2 col-lg-offset-2 col-md-3 col-md-offset-1">
+                <div class="influencer-block">
+                  <p><strong>{{item.influencer2_name}}</strong></p>
+                  <p class="text-left">Read the <a class="colored" href="{{item.influencer2_article_url}}" target="_blank">full article</a> published by <a class="colored" href="{{item.influencer2_article_url}}" target="_blank">{{item.influencer2_publisher_name}}.</a></p>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-7">
+                <div class="influencer-block">
                   <blockquote class="colored">{{item.influencer2_quote_text}}</blockquote>
-                  <p class="text-right">Click <a class="colored" href="{{item.influencer2_article_url}}" target="_blank">here</a> for the full article published by <a class="colored" href="{{item.influencer2_article_url}}" target="_blank">{{item.influencer2_publisher_name}}.</a></p>
                 </div>
               </div>
           </div>
       </div>
+    </div>
+
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-4 col-md-5 col-md-offset-1">
+              <h2 class="cta-agenda-title text-center"><a href="/#/detail/mtl-express#TOP" target="_blank" class=""><span class="cta-agenda-btn cta-agenda-title"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i> ADD TO MY AGENDA</span></a></h2>
+            </div>
+            <div class="col-lg-2 col-md-5">
+              <h2 class="cta-directions-title text-center"><a href="http://maps.google.com/?q=express+montreal" target="_blank"><span class="cta-directions-btn cta-drections-title">DIRECTIONS</span></a></h2>
+            </div>
+        </div>
+
+
+    <div class="section dark-section">
+      <div class="container">
+        <!--More Establishement Section-->
+
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <h2 class="section-title text-center"><span class="section-heading-2 section-heading-2-reverse">MORE ESTABLISHEMENTS</span></h2>
+            </div>
+        </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="poi-card">
+            <a href="https://memorable.io/detail/mtl-majestique#TOP">
+              <div class="img-ctn" style="background-image: url('images/{{item.establishement_name_id}}.jpg')">
+                <div class="img-ptrn-">
+                  <div class="img-h1">
+                    <!-- {{item.establishement_name}} -->
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="post-header">
+                    <h4><a href="https://memorable.io/detail/{{item.establishement_name_id}}#TOP">{{item.establishement_name}}</a></h4>
+              <span class="title-divider"></span>
+            </div>
+            <div class="info-ctn">
+              <div class="info-p">
+                Price range : {{item.establishement_pricerange}}
+              </div>
+              <div class="info-p">
+                Distance : {{getDistance(item.distance, item)}}
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="poi-card">
+            <a href="https://memorable.io/detail/mtl-majestique#TOP">
+              <div class="img-ctn" style="background-image: url('images/{{item.establishement_name_id}}.jpg')">
+                <div class="img-ptrn-">
+                  <div class="img-h1">
+                    <!-- {{item.establishement_name}} -->
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="post-header">
+                    <h4><a href="https://memorable.io/detail/{{item.establishement_name_id}}#TOP">{{item.establishement_name}}</a></h4>
+              <span class="title-divider"></span>
+            </div>
+            <div class="info-ctn">
+              <div class="info-p">
+                Price range : {{item.establishement_pricerange}}
+              </div>
+              <div class="info-p">
+                Distance : {{getDistance(item.distance, item)}}
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="poi-card">
+            <a href="https://memorable.io/detail/mtl-majestique#TOP">
+              <div class="img-ctn" style="background-image: url('images/{{item.establishement_name_id}}.jpg')">
+                <div class="img-ptrn-">
+                  <div class="img-h1">
+                    <!-- {{item.establishement_name}} -->
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="post-header">
+                    <h4><a href="https://memorable.io/detail/{{item.establishement_name_id}}#TOP">{{item.establishement_name}}</a></h4>
+              <span class="title-divider"></span>
+            </div>
+            <div class="info-ctn">
+              <div class="info-p">
+                Price range : {{item.establishement_pricerange}}
+              </div>
+              <div class="info-p">
+                Distance : {{getDistance(item.distance, item)}}
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
 
 
